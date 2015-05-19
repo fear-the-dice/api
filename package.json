@@ -1,0 +1,22 @@
+{
+  "name": "lets-kill-things",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/obihann/lets-kill-things.git"
+  },
+  "author": "",
+  "license": "GPL-V2",
+  "bugs": {
+    "url": "https://github.com/obihann/lets-kill-things/issues"
+  },
+  "homepage": "https://github.com/obihann/lets-kill-things",
+  "dependencies": {
+    "drakov": "git+ssh://git@github.com/obihann/drakov.git"
+  }
+}
