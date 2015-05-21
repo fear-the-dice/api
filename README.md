@@ -1,8 +1,19 @@
+[![Build Status](https://travis-ci.org/fear-the-dice/api.svg)](https://travis-ci.org/fear-the-dice/api)
+
 #Fear the Dice
 A tool for helping manage combat in a turn based environment. Allowing DM's/GM's to control stats such as AC, HP, and damage taken for a group.
 
 ##API Server
-We currently use a mock API server (Drakov), whhich reads in [API Blueprint](https://apiblueprint.org/) to generate a mock server.
+Our API server is built in Go.
+
+* **Use:**
+
+    ```
+    $ go run server.go
+    ```
+
+##Mock API
+We have a mock API server (Drakov), whhich reads in [API Blueprint](https://apiblueprint.org/) to generate an API server.
 
 * **Installation:**
 
