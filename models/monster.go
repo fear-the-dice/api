@@ -9,17 +9,11 @@ import (
 // User stores a users name
 type (
 	Monster struct {
-		ID         string `json:"ID"`
-		Monster    string `json:"monster"`
-		Initiative int    `json:"initiative"`
-		AC         int    `json:"ac"`
-		HP         int    `json:"hp"`
-		Health     int    `json:"health"`
-		Damage     int    `json:"damage"`
-		Challange  int    `json:"challange"`
-		XP         int    `json:"xp"`
-		Manual     int    `json:"manual"`
-		Speed      int    `json:"speed"`
+		Base
+		Monster   string `json:"monster"`
+		Challange int    `json:"challange"`
+		XP        int    `json:"xp"`
+		Manual    int    `json:"manual"`
 	}
 	Monsters []*Monster
 )
