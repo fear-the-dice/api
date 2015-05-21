@@ -4,7 +4,7 @@ import (
 	"flag"
 	"github.com/gin-gonic/gin"
 
-	"github.com/fear-the-dice/api/controllers"
+	"github.com/fear-the-dice/api/tree/real-api/controllers"
 )
 
 func main() {
