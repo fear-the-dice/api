@@ -2,31 +2,21 @@ package main
 
 import (
 	"flag"
-	"log"
-	"net/http"
+	"github.com/gin-gonic/gin"
 
 	"github.com/fear-the-dice/api/controllers"
 )
 
 func main() {
 	var (
-		host = flag.String("HOST", "keepiteasy.net", "The host name the server is running on")
-		port = flag.String("PORT", ":3000", "The server port")
+		port   = flag.String("PORT", ":3000", "The server port")
+		router = gin.Default()
 	)
 
 	flag.Parse()
 
-	config := controllers.ControllerConfig{
-		Host: *host,
-		Port: *port,
-	}
+	controllers.PlayerController.Attach(router)
+	controllers.MonsterController.Attach(router)
 
-	controller := controllers.NewController(&config)
-	mux := http.NewServeMux()
-
-	controller.Attach(mux)
-
-	if err := http.ListenAndServe(*port, mux); err != nil {
-		log.Fatal(err)
-	}
+	router.Run(*port)
 }
