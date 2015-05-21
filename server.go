@@ -1,22 +1,20 @@
 package main
 
 import (
-	"flag"
 	"github.com/gin-gonic/gin"
+	"os"
 
-	"github.com/fear-the-dice/api/tree/real-api/controllers"
+	"github.com/fear-the-dice/api/controllers"
 )
 
 func main() {
 	var (
-		port   = flag.String("PORT", ":3000", "The server port")
+		port   = ":" + os.Getenv("PORT")
 		router = gin.Default()
 	)
-
-	flag.Parse()
 
 	controllers.PlayerController.Attach(router)
 	controllers.MonsterController.Attach(router)
 
-	router.Run(*port)
+	router.Run(port)
 }
