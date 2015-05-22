@@ -23,6 +23,11 @@ func NewPlayer() *Player {
 
 func PopulatePlayers() (*Players, error) {
 	uri := os.Getenv("MONGOLAB_URI")
+
+	if uri == "" {
+		uri = "mongodb://localhost/heroku_app37083199"
+	}
+
 	Session, err := mgo.Dial(uri)
 	if err != nil {
 		return nil, err
