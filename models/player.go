@@ -1,9 +1,9 @@
 package models
 
 import (
-	"encoding/json"
-	"fmt"
 	"os"
+
+	"gopkg.in/mgo.v2"
 )
 
 // User stores a users name
@@ -22,15 +22,20 @@ func NewPlayer() *Player {
 }
 
 func PopulatePlayers() (*Players, error) {
-	var players Players
-	playersJSON, err := os.Open("players.json")
+	uri := os.Getenv("MONGOLAB_URI")
+	Session, err := mgo.Dial(uri)
 	if err != nil {
 		return nil, err
 	}
+	defer Session.Close()
 
-	jsonParser := json.NewDecoder(playersJSON)
-	if err = jsonParser.Decode(&players); err != nil {
-		fmt.Printf("%s", err.Error())
+	Session.SetSafe(&mgo.Safe{})
+	Collection := Session.DB("heroku_app37083199").C("players")
+
+	var players Players
+
+	if err := Collection.Find(nil).All(&players); err != nil {
+		return nil, err
 	}
 
 	return &players, nil

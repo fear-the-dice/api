@@ -1,9 +1,9 @@
 package models
 
 import (
-	"encoding/json"
-	"fmt"
 	"os"
+
+	"gopkg.in/mgo.v2"
 )
 
 // User stores a users name
@@ -18,20 +18,30 @@ type (
 	Monsters []*Monster
 )
 
+var (
+	Collection *mgo.Collection
+	Session    mgo.Session
+)
+
 func NewMonster() *Monster {
 	return &Monster{}
 }
 
 func PopulateMonsters() (*Monsters, error) {
-	var monsters Monsters
-	monstersJSON, err := os.Open("monsters.json")
+	uri := os.Getenv("MONGOLAB_URI")
+	Session, err := mgo.Dial(uri)
 	if err != nil {
 		return nil, err
 	}
+	defer Session.Close()
 
-	jsonParser := json.NewDecoder(monstersJSON)
-	if err = jsonParser.Decode(&monsters); err != nil {
-		fmt.Printf("%s", err.Error())
+	Session.SetSafe(&mgo.Safe{})
+	Collection := Session.DB("heroku_app37083199").C("monsters")
+
+	var monsters Monsters
+
+	if err := Collection.Find(nil).All(&monsters); err != nil {
+		return nil, err
 	}
 
 	return &monsters, nil

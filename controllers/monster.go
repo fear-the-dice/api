@@ -23,7 +23,8 @@ func (this *monsterController) Attach(router *gin.Engine) {
 func (this *monsterController) getMonsters(c *gin.Context) {
 	monsters, err := models.PopulateMonsters()
 	if err != nil {
-		fmt.Printf("%s", err.Error())
+		fmt.Errorf("%s", err)
+		//fmt.Printf("%s", err.Error())
 	}
 
 	c.JSON(http.StatusOK, monsters)
