@@ -1,5 +1,9 @@
 package models
 
+import ()
+
+var ()
+
 // User stores a users name
 type (
 	Base struct {
