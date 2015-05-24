@@ -1,18 +1,29 @@
 package models
 
-import ()
+import (
+	"os"
+)
 
-var ()
+var (
+	uri string
+)
 
 // User stores a users name
 type (
 	Base struct {
-		ID         string `json:"ID"`
-		Initiative int    `json:"initiative"`
-		AC         int    `json:"ac"`
-		HP         int    `json:"hp"`
-		Health     int    `json:"health"`
-		Damage     int    `json:"damage"`
-		Speed      int    `json:"speed"`
+		ID         string `bson:"id" json:"id"`
+		Initiative int    `bson:"initiative"`
+		AC         int    `bson:"ac"`
+		HP         int    `bson:"hp"`
+		Health     int    `bson:"health"`
+		Damage     int    `bson:"damage"`
+		Speed      string `bson:"speed"`
 	}
 )
+
+func Setup() {
+	uri := os.Getenv("MONGOLAB_URI")
+	if uri == "" {
+		uri = "mongodb://localhost/heroku_app37083199"
+	}
+}

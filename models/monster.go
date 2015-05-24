@@ -1,19 +1,23 @@
 package models
 
 import (
-	"os"
-
 	"gopkg.in/mgo.v2"
 )
 
 // User stores a users name
 type (
 	Monster struct {
-		Base
-		Monster   string `json:"monster"`
-		Challange int    `json:"challange"`
-		XP        int    `json:"xp"`
-		Manual    int    `json:"manual"`
+		ID         string `json:"id"`
+		Initiative int    `json:"initiative"`
+		AC         int    `json:"ac"`
+		HP         int    `json:"hp"`
+		Health     int    `json:"health"`
+		Damage     int    `json:"damage"`
+		Speed      string `json:"speed"`
+		Monster    string `json:"monster"`
+		Challange  int    `json:"challange"`
+		XP         int    `json:"xp"`
+		Manual     int    `json:"manual"`
 	}
 	Monsters []*Monster
 )
@@ -27,8 +31,36 @@ func NewMonster() *Monster {
 	return &Monster{}
 }
 
+func FindMonster(id string) (*Monster, error) {
+	Setup()
+
+	Session, err := mgo.Dial(uri)
+	if err != nil {
+		return nil, err
+	}
+	defer Session.Close()
+
+	Session.SetSafe(&mgo.Safe{})
+	Collection := Session.DB("heroku_app37083199").C("monsters")
+
+	var monster Monster
+
+	query := struct {
+		id string
+	}{
+		id,
+	}
+
+	if err := Collection.Find(query).One(&monster); err != nil {
+		return nil, err
+	}
+
+	return &monster, nil
+}
+
 func PopulateMonsters() (*Monsters, error) {
-	uri := os.Getenv("MONGOLAB_URI")
+	Setup()
+
 	Session, err := mgo.Dial(uri)
 	if err != nil {
 		return nil, err

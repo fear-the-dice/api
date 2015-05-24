@@ -8,9 +8,19 @@ A tool for helping manage combat in a turn based environment. Allowing DM's/GM's
 Our API server is built in Go.
 
 * **Use:**
-
+> To quickly run the server you can use the following command:
     ```
     $ go run server.go
+    ```
+
+* **Installation:**
+> To install the server (which is required if you are using supervisor) you have to run:
+    ```
+    $ go get
+    ```
+> Then you can run:
+    ```
+    $ api 
     ```
 
 ##Mock API
