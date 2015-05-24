@@ -16,8 +16,11 @@ var PlayerController *playerController = new(playerController)
 func (this *playerController) Attach(router *gin.Engine) {
 	players := router.Group("/players")
 	{
+		players.POST("", this.newPlayer)
 		players.GET("", this.getPlayers)
 		players.GET("/:id", this.getPlayer)
+		players.PATCH("/:id", this.updatePlayer)
+		players.DELETE("/:id", this.deletePlayer)
 	}
 }
 
@@ -34,15 +37,18 @@ func (this *playerController) getPlayers(c *gin.Context) {
 	}
 }
 
-func (this *playerController) getPlayer(c *gin.Context) {
-	player, err := models.FindPlayer(c.Params.ByName("id"))
-	if err != nil {
-		fmt.Errorf("%s", err)
-	}
+func (this *playerController) newPlayer(c *gin.Context) {
+	c.String(http.StatusOK, "")
+}
 
-	if player == nil {
-		c.String(http.StatusNotFound, "")
-	} else {
-		c.JSON(http.StatusOK, player)
-	}
+func (this *playerController) deletePlayer(c *gin.Context) {
+	c.String(http.StatusOK, "")
+}
+
+func (this *playerController) updatePlayer(c *gin.Context) {
+	c.String(http.StatusOK, "")
+}
+
+func (this *playerController) getPlayer(c *gin.Context) {
+	c.String(http.StatusOK, "")
 }

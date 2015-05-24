@@ -16,8 +16,11 @@ var MonsterController *monsterController = new(monsterController)
 func (this *monsterController) Attach(router *gin.Engine) {
 	monsters := router.Group("/monsters")
 	{
+		monsters.POST("", this.newMonster)
 		monsters.GET("", this.getMonsters)
 		monsters.GET("/:id", this.getMonster)
+		monsters.PATCH("/:id", this.updateMonster)
+		monsters.DELETE("/:id", this.deleteMonster)
 	}
 }
 
@@ -41,4 +44,16 @@ func (this *monsterController) getMonster(c *gin.Context) {
 	} else {
 		c.JSON(http.StatusOK, monster)
 	}
+}
+
+func (this *monsterController) newMonster(c *gin.Context) {
+	c.String(http.StatusOK, "")
+}
+
+func (this *monsterController) deleteMonster(c *gin.Context) {
+	c.String(http.StatusOK, "")
+}
+
+func (this *monsterController) updateMonster(c *gin.Context) {
+	c.String(http.StatusOK, "")
 }
