@@ -37,18 +37,32 @@ func (this *playerController) getPlayers(c *gin.Context) {
 	}
 }
 
+func (this *playerController) getPlayer(c *gin.Context) {
+	player, err := models.FindPlayer(c.Params.ByName("id"))
+	if err != nil {
+		fmt.Errorf("%s", err)
+	}
+
+	if player == nil {
+		c.String(http.StatusNotFound, "")
+	} else {
+		c.JSON(http.StatusOK, player)
+	}
+}
+
 func (this *playerController) newPlayer(c *gin.Context) {
 	c.String(http.StatusOK, "")
 }
 
 func (this *playerController) deletePlayer(c *gin.Context) {
+	if err := models.DeletePlayer(c.Params.ByName("id")); err != nil {
+		fmt.Errorf("%s", err)
+		c.String(http.StatusNotFound, "")
+	}
+
 	c.String(http.StatusOK, "")
 }
 
 func (this *playerController) updatePlayer(c *gin.Context) {
-	c.String(http.StatusOK, "")
-}
-
-func (this *playerController) getPlayer(c *gin.Context) {
 	c.String(http.StatusOK, "")
 }

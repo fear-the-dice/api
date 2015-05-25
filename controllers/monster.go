@@ -51,6 +51,11 @@ func (this *monsterController) newMonster(c *gin.Context) {
 }
 
 func (this *monsterController) deleteMonster(c *gin.Context) {
+	if err := models.DeleteMonster(c.Params.ByName("id")); err != nil {
+		fmt.Errorf("%s", err)
+		c.String(http.StatusNotFound, "")
+	}
+
 	c.String(http.StatusOK, "")
 }
 

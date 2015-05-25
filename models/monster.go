@@ -2,6 +2,7 @@ package models
 
 import (
 	"gopkg.in/mgo.v2"
+	"gopkg.in/mgo.v2/bson"
 )
 
 // User stores a users name
@@ -77,4 +78,22 @@ func PopulateMonsters() (*Monsters, error) {
 	}
 
 	return &monsters, nil
+}
+
+func DeleteMonster(id string) error {
+	Setup()
+
+	Session, err := mgo.Dial(uri)
+	if err != nil {
+		return nil
+	}
+	defer Session.Close()
+
+	Collection := Session.DB("heroku_app37083199").C("monsters")
+
+	if err := Collection.Remove(bson.M{"id": id}); err != nil {
+		return err
+	}
+
+	return nil
 }
