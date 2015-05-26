@@ -1,7 +1,3 @@
 language: go
 go:
   - 1.3
-before_install:
-  - npm install -g dredd
-before_script:
-    - dredd --dry-run

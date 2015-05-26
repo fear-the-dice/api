@@ -1,7 +1,7 @@
 dry-run: null
 hookfiles: null
 sandbox: false
-server: 'PORT=3000 MONGOLAB_URI=mongodb://localhost/heroku_app37083199 api'
+server: 'PORT=3000 MONGOLAB_URI=mongodb://localhost/heroku_app37083199 go run server.go'
 server-wait: 3
 init: false
 custom: {}

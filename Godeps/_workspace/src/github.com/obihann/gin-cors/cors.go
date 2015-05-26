@@ -72,7 +72,7 @@ func Middleware(options Options) gin.HandlerFunc {
 				res.Header().Set("Access-Control-Max-Age", strconv.FormatInt(int64(options.MaxAge/time.Second), 10))
 			}
 
-			c.AbortWithStatus(http.StatusOK)
+			c.AbortWithStatus(http.StatusNoContent)
 		} else {
 			c.Next()
 		}

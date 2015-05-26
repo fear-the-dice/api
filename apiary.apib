@@ -7,57 +7,26 @@ A tool for helping manage combat in a turn based environment. Allowing DM's/GM's
 
 # Group Monsters
 
-## Monsters Collection [/monsters]
+## Monsters Collection [/monsters/]
 
 ### Get API Options [OPTIONS]
 
-+ Request Get Allowed Methods
-    + Headers
-    
-            HEAD: /monsters HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache
-+ Response 202
++ Response 204
     + Headers
     
             Access-Control-Allow-Headers: Origin,Accept,Content-Type,Authorization
             Access-Control-Allow-Methods: GET,POST,PUT,DELETE,HEAD
-            Access-Control-Allow-Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
-            Content-Length: 0
-            Content-Type: text/plain; charset=utf-8
-            Date: Tue, 26 May 2015 13:17:09 GMT
 
 ### Get Headers [HEAD]
 
-+ Request Get Headers
-    + Headers
-    
-            HEAD: /monsters HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache
-+ Response 202
-    + Headers
-    
-            Access-Control-Allow-Headers: Origin,Accept,Content-Type,Authorization
-            Access-Control-Allow-Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
-            Content-Length: 0
-            Content-Type: text/plain; charset=utf-8
-            Date: Tue, 26 May 2015 13:17:09 GMT
++ Response 204
 
 ### Get All Monsters [GET]
 
-+ Request Get Monsters (application/json)
-    + Headers
-    
-            GET: /monsters HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache   
 + Response 200
     + Headers
     
-            Connection: keep-alive  
             Content-Type: application/json; charset=utf-8
-            Date: Tue, 26 May 2015 15:52:55 GMT  
     + Body
         
          ```    
@@ -293,53 +262,22 @@ A tool for helping manage combat in a turn based environment. Allowing DM's/GM's
 
 ### Get API Options [OPTIONS]
 
-+ Request Get Allowed Methods
-    + Headers
-    
-            HEAD: /monsters/b8c2a999-e892-0964-a0f4-e36db31d2307 HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache
-+ Response 200
++ Response 204
     + Headers
     
             Access-Control-Allow-Headers: Origin,Accept,Content-Type,Authorization
             Access-Control-Allow-Methods: GET,POST,PUT,DELETE,HEAD
-            Access-Control-Allow-Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
-            Content-Length: 0
-            Content-Type: text/plain; charset=utf-8
-            Date: Tue, 26 May 2015 13:17:09 GMT
 
 ### Get Headers [HEAD]
 
-+ Request Get Headers
-    + Headers
-    
-            HEAD: /monsters/b8c2a999-e892-0964-a0f4-e36db31d2307 HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache
-+ Response 200
-    + Headers
-    
-            Access-Control-Allow-Headers: Origin,Accept,Content-Type,Authorization
-            Access-Control-Allow-Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
-            Content-Length: 0
-            Content-Type: text/plain; charset=utf-8
-            Date: Tue, 26 May 2015 13:17:09 GMT
++ Response 204
 
 ### Get Monster by ID [GET]
 
-+ Request Get Monster By ID (application/json)
-    + Headers
-    
-            GET: /monsters/b8c2a999-e892-0964-a0f4-e36db31d2307 HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache   
 + Response 200
     + Headers
     
-            Connection: keep-alive  
             Content-Type: application/json; charset=utf-8
-            Date: Tue, 26 May 2015 15:52:55 GMT  
     + Body 
     
          ```
@@ -360,12 +298,7 @@ A tool for helping manage combat in a turn based environment. Allowing DM's/GM's
 
 ### New Monster [POST]
 
-+ Request New Monster (application/json)
-    + Headers
-    
-            POST: /monsters HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache   
++ Request New Monster
     + Body
     
          ```
@@ -382,12 +315,11 @@ A tool for helping manage combat in a turn based environment. Allowing DM's/GM's
             "manual": 33
         }
         ```
+
 + Response 201
     + Headers
     
-            Connection: keep-alive  
             Content-Type: application/json; charset=utf-8
-            Date: Tue, 26 May 2015 15:52:55 GMT  
             Location: fear-the-dice-api.herokuapp.com/monsters/555e45fc60a3dca513e6265d
     + Body
     
@@ -414,53 +346,22 @@ A tool for helping manage combat in a turn based environment. Allowing DM's/GM's
 
 ### Get API Options [OPTIONS]
 
-+ Request Get Allowed Methods
-    + Headers
-    
-            HEAD: /players HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache
-+ Response 202
++ Response 204
     + Headers
     
             Access-Control-Allow-Headers: Origin,Accept,Content-Type,Authorization
             Access-Control-Allow-Methods: GET,POST,PUT,DELETE,HEAD
-            Access-Control-Allow-Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
-            Content-Length: 0
-            Content-Type: text/plain; charset=utf-8
-            Date: Tue, 26 May 2015 13:17:09 GMT
 
 ### Get Headers [HEAD]
 
-+ Request Get Headers
-    + Headers
-    
-            HEAD: /players HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache
-+ Response 202
-    + Headers
-    
-            Access-Control-Allow-Headers: Origin,Accept,Content-Type,Authorization
-            Access-Control-Allow-Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
-            Content-Length: 0
-            Content-Type: text/plain; charset=utf-8
-            Date: Tue, 26 May 2015 13:17:09 GMT
-
++ Response 204
 
 ### Get Players [GET]
 
-+ Request Get Players (application/json)
-    + Headers    
-    
-            GET: /players HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache   
 + Response 200
     + Headers
     
-            Connection: keep-alive  
-            Date: Tue, 26 May 2015 15:52:55 GMT  
+            Content-Type: text/plain; charset=utf-8
     + Body
     
          ```    
@@ -518,51 +419,23 @@ A tool for helping manage combat in a turn based environment. Allowing DM's/GM's
     + ID: `555e460260a3dca513e6266d` (string), required - ID of the 'player'
 
 ### Get API Options [OPTIONS]
-+ Request Get Allowed Methods
-    + Headers
-    
-            HEAD: /players/555e460260a3dca513e6266d HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache
-+ Response 202
+
++ Response 204
     + Headers
     
             Access-Control-Allow-Headers: Origin,Accept,Content-Type,Authorization
             Access-Control-Allow-Methods: GET,POST,PUT,DELETE,HEAD
-            Access-Control-Allow-Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
-            Content-Length: 0
-            Content-Type: text/plain; charset=utf-8
-            Date: Tue, 26 May 2015 13:17:09 GMT
 
 ### Get Headers [HEAD]
-+ Request Get Headers
-    + Headers
-    
-            HEAD: /players/555e460260a3dca513e6266d HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache
-+ Response 202
-    + Headers
-    
-            Access-Control-Allow-Headers: Origin,Accept,Content-Type,Authorization
-            Access-Control-Allow-Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
-            Content-Length: 0
-            Content-Type: text/plain; charset=utf-8
-            Date: Tue, 26 May 2015 13:17:09 GMT
+
++ Response 204
 
 ### Get Player [GET]
-+ Request Get Player by ID (application/json)
-    + Headers
-    
-            GET: /players/555e460260a3dca513e6266d HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache
+
 + Response 200
     + Headers
     
-            Connection: keep-alive  
             Content-Type: application/json; charset=utf-8
-            Date: Tue, 26 May 2015 15:52:55 GMT  
     + Body
     
          ```
@@ -581,13 +454,7 @@ A tool for helping manage combat in a turn based environment. Allowing DM's/GM's
 
 ### New Player [POST]
 
-+ Request Create New Player (application/json)
-    + Headers
-    
-    
-            POST: /players HTTP/1.1   
-            Host: fear-the-dice-api.herokuapp.com   
-            Cache-Control: no-cache   
++ Request Create New Player
     + Body
     
          ```
@@ -605,9 +472,7 @@ A tool for helping manage combat in a turn based environment. Allowing DM's/GM's
 + Response 201
     + Headers
     
-            Connection: keep-alive  
             Content-Type: application/json; charset=utf-8
-            Date: Tue, 26 May 2015 15:52:55 GMT  
             Location: fear-the-dice-api.herokuapp.com/players/555e460260a3dca513e6266f
     + Body
     
@@ -624,4 +489,5 @@ A tool for helping manage combat in a turn based environment. Allowing DM's/GM's
             "damage": 0
         }
          ```
+
 
