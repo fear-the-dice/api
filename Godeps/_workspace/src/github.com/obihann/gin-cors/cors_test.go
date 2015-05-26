@@ -153,7 +153,7 @@ func TestOptionsRequest(t *testing.T) {
 	assert.Equal("GET,POST,PUT,DELETE,PATCH,HEAD", r.Header().Get("Access-Control-Allow-Methods"))
 	assert.Equal("Origin,Accept,Content-Type,Authorization", r.Header().Get("Access-Control-Allow-Headers"))
 	assert.Equal("", r.Body.String())
-	assert.Equal(200, r.Code)
+	assert.Equal(204, r.Code)
 }
 
 func TestAllowMethods(t *testing.T) {
