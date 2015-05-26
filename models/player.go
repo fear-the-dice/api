@@ -1,6 +1,8 @@
 package models
 
 import (
+	"os"
+
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
@@ -27,7 +29,7 @@ func NewPlayer() *Player {
 }
 
 func InsertPlayer(player Player) (*Player, error) {
-	Setup()
+	uri := os.Getenv("MONGOLAB_URI")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -45,7 +47,7 @@ func InsertPlayer(player Player) (*Player, error) {
 }
 
 func FindPlayer(id bson.ObjectId) (*Player, error) {
-	Setup()
+	uri := os.Getenv("MONGOLAB_URI")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -66,7 +68,7 @@ func FindPlayer(id bson.ObjectId) (*Player, error) {
 }
 
 func PopulatePlayers() (*Players, error) {
-	Setup()
+	uri := os.Getenv("MONGOLAB_URI")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -87,7 +89,7 @@ func PopulatePlayers() (*Players, error) {
 }
 
 func DeletePlayer(id bson.ObjectId) error {
-	Setup()
+	uri := os.Getenv("MONGOLAB_URI")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -105,7 +107,7 @@ func DeletePlayer(id bson.ObjectId) error {
 }
 
 func UpdatePlayer(id bson.ObjectId, player Player) error {
-	Setup()
+	uri := os.Getenv("MONGOLAB_URI")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {

@@ -1,6 +1,8 @@
 package models
 
 import (
+	"os"
+
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
@@ -34,7 +36,7 @@ func NewMonster() *Monster {
 }
 
 func InsertMonster(monster Monster) (*Monster, error) {
-	Setup()
+	uri := os.Getenv("MONGOLAB_URI")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -52,7 +54,7 @@ func InsertMonster(monster Monster) (*Monster, error) {
 }
 
 func FindMonster(id bson.ObjectId) (*Monster, error) {
-	Setup()
+	uri := os.Getenv("MONGOLAB_URI")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -73,7 +75,7 @@ func FindMonster(id bson.ObjectId) (*Monster, error) {
 }
 
 func PopulateMonsters() (*Monsters, error) {
-	Setup()
+	uri := os.Getenv("MONGOLAB_URI")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -94,7 +96,7 @@ func PopulateMonsters() (*Monsters, error) {
 }
 
 func DeleteMonster(id bson.ObjectId) error {
-	Setup()
+	uri := os.Getenv("MONGOLAB_URI")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -112,7 +114,7 @@ func DeleteMonster(id bson.ObjectId) error {
 }
 
 func UpdateMonster(id bson.ObjectId, monster Monster) error {
-	Setup()
+	uri := os.Getenv("MONGOLAB_URI")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
