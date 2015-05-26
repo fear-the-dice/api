@@ -12,6 +12,14 @@
 			"Rev": "bde5c16eb82ff15a1734a3818d9b9547065f65b1"
 		},
 		{
+			"ImportPath": "github.com/mattn/go-colorable",
+			"Rev": "043ae16291351db8465272edf465c9f388161627"
+		},
+		{
+			"ImportPath": "github.com/tommy351/gin-cors",
+			"Rev": "f7219a698f21b23d73ae9330d3c5842951ce0b6a"
+		},
+		{
 			"ImportPath": "gopkg.in/mgo.v2",
 			"Comment": "r2015.01.24",
 			"Rev": "c6a7dce14133ccac2dcac3793f1d6e2ef048503a"

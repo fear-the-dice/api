@@ -1,17 +1,17 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"os"
 
 	"github.com/fear-the-dice/api/controllers"
+	"github.com/gin-gonic/gin"
+	"github.com/tommy351/gin-cors"
 )
 
 func main() {
-	var (
-		port   = ":" + os.Getenv("PORT")
-		router = gin.Default()
-	)
+	port := ":" + os.Getenv("PORT")
+	router := gin.New()
+	router.Use(cors.Middleware(cors.Options{}))
 
 	controllers.PlayerController.Attach(router)
 	controllers.MonsterController.Attach(router)
