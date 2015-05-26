@@ -15,11 +15,18 @@ var MonsterController *monsterController = new(monsterController)
 
 // Attach accepts a Gin object and then creates all routes
 func (this *monsterController) Attach(router *gin.Engine) {
+	base := router.Group("/")
+	{
+		base.OPTIONS("/", this.options)
+	}
+
 	monsters := router.Group("/monsters")
 	{
 		monsters.POST("", this.newMonster)
+		monsters.OPTIONS("/", this.options)
 		monsters.GET("", this.getMonsters)
 		monsters.GET("/:id", this.getMonster)
+		monsters.OPTIONS("/:id", this.options)
 		monsters.PUT("/:id", this.updateMonster)
 		monsters.DELETE("/:id", this.deleteMonster)
 	}
@@ -32,6 +39,12 @@ func (this *monsterController) getMonsters(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, monsters)
+}
+
+func (this *monsterController) options(c *gin.Context) {
+	c.Writer.Header().Set("Access-Control-Allow-Headers", "Origin,Accept,Content-Type,Authorization")
+	c.Writer.Header().Set("Access-Control-Allow-Method", "GET,POST,PUT,DELETE")
+	c.String(http.StatusNoContent, "")
 }
 
 func (this *monsterController) getMonster(c *gin.Context) {

@@ -18,8 +18,10 @@ func (this *playerController) Attach(router *gin.Engine) {
 	players := router.Group("/players")
 	{
 		players.POST("", this.newPlayer)
+		players.OPTIONS("/", this.options)
 		players.GET("", this.getPlayers)
 		players.GET("/:id", this.getPlayer)
+		players.OPTIONS("/:id", this.options)
 		players.PUT("/:id", this.updatePlayer)
 		players.DELETE("/:id", this.deletePlayer)
 	}
@@ -50,6 +52,12 @@ func (this *playerController) getPlayer(c *gin.Context) {
 	} else {
 		c.JSON(http.StatusOK, player)
 	}
+}
+
+func (this *playerController) options(c *gin.Context) {
+	c.Writer.Header().Set("Access-Control-Allow-Headers", "Origin,Accept,Content-Type,Authorization")
+	c.Writer.Header().Set("Access-Control-Allow-Method", "GET,POST,PUT,DELETE")
+	c.String(http.StatusNoContent, "")
 }
 
 func (this *playerController) newPlayer(c *gin.Context) {
