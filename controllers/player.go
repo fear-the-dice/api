@@ -18,7 +18,8 @@ func (this *playerController) Attach(router *gin.Engine) {
 	players := router.Group("/players")
 	{
 		players.POST("", this.newPlayer)
-		players.OPTIONS("/", this.options)
+		players.OPTIONS("", this.options)
+		players.HEAD("/", this.options)
 		players.GET("", this.getPlayers)
 		players.GET("/:id", this.getPlayer)
 		players.OPTIONS("/:id", this.options)
