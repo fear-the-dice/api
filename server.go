@@ -12,6 +12,7 @@ func main() {
 	port := ":" + os.Getenv("PORT")
 	router := gin.New()
 	router.Use(cors.Middleware(cors.Options{
+		AllowHeaders: []string{"Origin", "Accept", "Content-Type", "Authorization", "X-HTTP-Method-Override"},
 		AllowMethods: []string{"GET", "POST", "PUT", "DELETE", "HEAD"},
 	}))
 

@@ -23,8 +23,8 @@ func (this *monsterController) Attach(router *gin.Engine) {
 	monsters := router.Group("/monsters")
 	{
 		monsters.POST("", this.newMonster)
+		monsters.OPTIONS("", this.options)
 		monsters.HEAD("/", this.options)
-		monsters.OPTIONS("/", this.options)
 		monsters.GET("", this.getMonsters)
 		monsters.GET("/:id", this.getMonster)
 		monsters.HEAD("/:id", this.options)
