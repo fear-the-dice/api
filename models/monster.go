@@ -37,6 +37,7 @@ func NewMonster() *Monster {
 
 func InsertMonster(monster Monster) (*Monster, error) {
 	uri := os.Getenv("MONGOLAB_URI")
+	db := os.Getenv("DB")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -44,7 +45,7 @@ func InsertMonster(monster Monster) (*Monster, error) {
 	}
 	defer Session.Close()
 
-	Collection := Session.DB("heroku_app37083199").C("monsters")
+	Collection := Session.DB(db).C("monsters")
 
 	if err := Collection.Insert(monster); err != nil {
 		return nil, err
@@ -55,6 +56,7 @@ func InsertMonster(monster Monster) (*Monster, error) {
 
 func FindMonster(id bson.ObjectId) (*Monster, error) {
 	uri := os.Getenv("MONGOLAB_URI")
+	db := os.Getenv("DB")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -63,7 +65,7 @@ func FindMonster(id bson.ObjectId) (*Monster, error) {
 	defer Session.Close()
 
 	Session.SetSafe(&mgo.Safe{})
-	Collection := Session.DB("heroku_app37083199").C("monsters")
+	Collection := Session.DB(db).C("monsters")
 
 	var monster Monster
 
@@ -76,6 +78,7 @@ func FindMonster(id bson.ObjectId) (*Monster, error) {
 
 func PopulateMonsters() (*Monsters, error) {
 	uri := os.Getenv("MONGOLAB_URI")
+	db := os.Getenv("DB")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -84,7 +87,7 @@ func PopulateMonsters() (*Monsters, error) {
 	defer Session.Close()
 
 	Session.SetSafe(&mgo.Safe{})
-	Collection := Session.DB("heroku_app37083199").C("monsters")
+	Collection := Session.DB(db).C("monsters")
 
 	var monsters Monsters
 
@@ -97,6 +100,7 @@ func PopulateMonsters() (*Monsters, error) {
 
 func DeleteMonster(id bson.ObjectId) error {
 	uri := os.Getenv("MONGOLAB_URI")
+	db := os.Getenv("DB")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -104,7 +108,7 @@ func DeleteMonster(id bson.ObjectId) error {
 	}
 	defer Session.Close()
 
-	Collection := Session.DB("heroku_app37083199").C("monsters")
+	Collection := Session.DB(db).C("monsters")
 
 	if err := Collection.Remove(bson.M{"_id": id}); err != nil {
 		return err
@@ -115,6 +119,7 @@ func DeleteMonster(id bson.ObjectId) error {
 
 func UpdateMonster(id bson.ObjectId, monster Monster) error {
 	uri := os.Getenv("MONGOLAB_URI")
+	db := os.Getenv("DB")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -122,7 +127,7 @@ func UpdateMonster(id bson.ObjectId, monster Monster) error {
 	}
 	defer Session.Close()
 
-	Collection := Session.DB("heroku_app37083199").C("monsters")
+	Collection := Session.DB(db).C("monsters")
 
 	_, err = Collection.Upsert(bson.M{"_id": id}, monster)
 	if err != nil {
