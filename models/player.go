@@ -19,6 +19,7 @@ type (
 		Speed      string        `json:"speed"`
 		Name       string        `json:"name"`
 		Character  string        `json:"character"`
+		Thumb      string        `json:"thumb"`
 	}
 	Players []*Player
 )

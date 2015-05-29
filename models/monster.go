@@ -21,6 +21,12 @@ type (
 		Challange  int           `json:"challange"`
 		XP         int           `json:"xp"`
 		Manual     int           `json:"manual"`
+		STR        int           `json:"str"`
+		DEX        int           `json:"dex"`
+		CON        int           `json:"con"`
+		INT        int           `json:"int"`
+		WIS        int           `json:"wis"`
+		CHA        int           `json:"cha"`
 	}
 	Monsters []*Monster
 )
