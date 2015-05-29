@@ -31,6 +31,7 @@ func NewPlayer() *Player {
 
 func InsertPlayer(player Player) (*Player, error) {
 	uri := os.Getenv("MONGOLAB_URI")
+	db := os.Getenv("DB")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -38,7 +39,7 @@ func InsertPlayer(player Player) (*Player, error) {
 	}
 	defer Session.Close()
 
-	Collection := Session.DB("heroku_app37083199").C("players")
+	Collection := Session.DB(db).C("players")
 
 	if err := Collection.Insert(player); err != nil {
 		return nil, err
@@ -49,6 +50,7 @@ func InsertPlayer(player Player) (*Player, error) {
 
 func FindPlayer(id bson.ObjectId) (*Player, error) {
 	uri := os.Getenv("MONGOLAB_URI")
+	db := os.Getenv("DB")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -57,7 +59,7 @@ func FindPlayer(id bson.ObjectId) (*Player, error) {
 	defer Session.Close()
 
 	Session.SetSafe(&mgo.Safe{})
-	Collection := Session.DB("heroku_app37083199").C("players")
+	Collection := Session.DB(db).C("players")
 
 	var player Player
 
@@ -70,6 +72,7 @@ func FindPlayer(id bson.ObjectId) (*Player, error) {
 
 func PopulatePlayers() (*Players, error) {
 	uri := os.Getenv("MONGOLAB_URI")
+	db := os.Getenv("DB")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -78,7 +81,7 @@ func PopulatePlayers() (*Players, error) {
 	defer Session.Close()
 
 	Session.SetSafe(&mgo.Safe{})
-	Collection := Session.DB("heroku_app37083199").C("players")
+	Collection := Session.DB(db).C("players")
 
 	var players Players
 
@@ -91,6 +94,7 @@ func PopulatePlayers() (*Players, error) {
 
 func DeletePlayer(id bson.ObjectId) error {
 	uri := os.Getenv("MONGOLAB_URI")
+	db := os.Getenv("DB")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -98,7 +102,7 @@ func DeletePlayer(id bson.ObjectId) error {
 	}
 	defer Session.Close()
 
-	Collection := Session.DB("heroku_app37083199").C("players")
+	Collection := Session.DB(db).C("players")
 
 	if err := Collection.Remove(bson.M{"_id": id}); err != nil {
 		return err
@@ -109,6 +113,7 @@ func DeletePlayer(id bson.ObjectId) error {
 
 func UpdatePlayer(id bson.ObjectId, player Player) error {
 	uri := os.Getenv("MONGOLAB_URI")
+	db := os.Getenv("DB")
 
 	Session, err := mgo.Dial(uri)
 	if err != nil {
@@ -116,7 +121,7 @@ func UpdatePlayer(id bson.ObjectId, player Player) error {
 	}
 	defer Session.Close()
 
-	Collection := Session.DB("heroku_app37083199").C("players")
+	Collection := Session.DB(db).C("players")
 
 	_, err = Collection.Upsert(bson.M{"_id": id}, player)
 	if err != nil {
