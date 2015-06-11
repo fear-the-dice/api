@@ -1,5 +1,6 @@
 # gin-cors
 
+[![GoDoc](https://godoc.org/github.com/obihann/gin-cors?status.svg)](https://godoc.org/github.com/obihann/gin-cors)
 [![Build Status](https://travis-ci.org/obihann/gin-cors.svg?branch=master)](https://travis-ci.org/obihann/gin-cors)
 
 CORS middleware for [Gin]. Originally written by [tommy351](https://github.com/tommy351/gin-cors), however I felt that OPTIONS
