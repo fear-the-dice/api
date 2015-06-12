@@ -1,8 +1,6 @@
 package models
 
 import (
-	"os"
-
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
@@ -42,16 +40,13 @@ func NewMonster() *Monster {
 }
 
 func InsertMonster(monster Monster) (*Monster, error) {
-	uri := os.Getenv("MONGOLAB_URI")
-	db := os.Getenv("DB")
-
-	Session, err := mgo.Dial(uri)
+	Session, err := mgo.Dial(dbOptions.Host)
 	if err != nil {
 		return nil, err
 	}
 	defer Session.Close()
 
-	Collection := Session.DB(db).C("monsters")
+	Collection := Session.DB(dbOptions.Database).C("monsters")
 
 	if err := Collection.Insert(monster); err != nil {
 		return nil, err
@@ -61,17 +56,14 @@ func InsertMonster(monster Monster) (*Monster, error) {
 }
 
 func FindMonster(id bson.ObjectId) (*Monster, error) {
-	uri := os.Getenv("MONGOLAB_URI")
-	db := os.Getenv("DB")
-
-	Session, err := mgo.Dial(uri)
+	Session, err := mgo.Dial(dbOptions.Host)
 	if err != nil {
 		return nil, err
 	}
 	defer Session.Close()
 
 	Session.SetSafe(&mgo.Safe{})
-	Collection := Session.DB(db).C("monsters")
+	Collection := Session.DB(dbOptions.Database).C("monsters")
 
 	var monster Monster
 
@@ -83,17 +75,14 @@ func FindMonster(id bson.ObjectId) (*Monster, error) {
 }
 
 func PopulateMonsters() (*Monsters, error) {
-	uri := os.Getenv("MONGOLAB_URI")
-	db := os.Getenv("DB")
-
-	Session, err := mgo.Dial(uri)
+	Session, err := mgo.Dial(dbOptions.Host)
 	if err != nil {
 		return nil, err
 	}
 	defer Session.Close()
 
 	Session.SetSafe(&mgo.Safe{})
-	Collection := Session.DB(db).C("monsters")
+	Collection := Session.DB(dbOptions.Database).C("monsters")
 
 	var monsters Monsters
 
@@ -105,16 +94,13 @@ func PopulateMonsters() (*Monsters, error) {
 }
 
 func DeleteMonster(id bson.ObjectId) error {
-	uri := os.Getenv("MONGOLAB_URI")
-	db := os.Getenv("DB")
-
-	Session, err := mgo.Dial(uri)
+	Session, err := mgo.Dial(dbOptions.Host)
 	if err != nil {
 		return nil
 	}
 	defer Session.Close()
 
-	Collection := Session.DB(db).C("monsters")
+	Collection := Session.DB(dbOptions.Database).C("monsters")
 
 	if err := Collection.Remove(bson.M{"_id": id}); err != nil {
 		return err
@@ -124,16 +110,13 @@ func DeleteMonster(id bson.ObjectId) error {
 }
 
 func UpdateMonster(id bson.ObjectId, monster Monster) error {
-	uri := os.Getenv("MONGOLAB_URI")
-	db := os.Getenv("DB")
-
-	Session, err := mgo.Dial(uri)
+	Session, err := mgo.Dial(dbOptions.Host)
 	if err != nil {
 		return nil
 	}
 	defer Session.Close()
 
-	Collection := Session.DB(db).C("monsters")
+	Collection := Session.DB(dbOptions.Database).C("monsters")
 
 	_, err = Collection.Upsert(bson.M{"_id": id}, monster)
 	if err != nil {

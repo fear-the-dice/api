@@ -9,7 +9,9 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
-type playerController struct{}
+type (
+	playerController struct{}
+)
 
 var PlayerController *playerController = new(playerController)
 
