@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"os"
 	"strings"
@@ -15,12 +16,11 @@ import (
 	"github.com/obihann/gin-cors"
 )
 
-func checkAuth(pool *redis.Pool) gin.HandlerFunc {
+func checkAuth(pool *redis.Pool, verifyKey []byte) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		conn := pool.Get()
 		defer conn.Close()
 
-		verifyKey := []byte("secretkey")
 		auth := c.Request.Header.Get("Authorization")
 		auth = strings.Trim(auth[6:], " ")
 
@@ -70,6 +70,7 @@ func main() {
 		port        = os.Getenv("PORT")
 		mongoServer = os.Getenv("MONGOLAB_URI")
 		mongoDb     = os.Getenv("DB")
+		authKeyPath = os.Getenv("AUTHKEY")
 	)
 
 	if len(redisServer) <= 1 {
@@ -86,6 +87,10 @@ func main() {
 
 	if len(mongoServer) <= 1 {
 		mongoServer = "mongodb://localhost"
+	}
+
+	if len(authKeyPath) <= 1 {
+		authKeyPath = "/usr/local/keys/FTDAuth_pk8.rsa"
 	}
 
 	pool := &redis.Pool{
@@ -106,6 +111,11 @@ func main() {
 		Database: mongoDb,
 	}
 
+	authKey, err := ioutil.ReadFile(authKeyPath)
+	if err != nil {
+		panic("Unable to read JWT key: " + authKeyPath)
+	}
+
 	models.SetConfig(&dbOptions)
 
 	router := gin.New()
@@ -115,7 +125,7 @@ func main() {
 		AllowMethods: []string{"GET", "POST", "PUT", "DELETE", "HEAD"},
 	}))
 
-	router.Use(checkAuth(pool))
+	router.Use(checkAuth(pool, authKey))
 
 	controllers.PlayerController.Attach(router)
 	controllers.MonsterController.Attach(router)
