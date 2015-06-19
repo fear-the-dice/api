@@ -3,6 +3,7 @@
 [![GoDoc](https://godoc.org/github.com/fear-the-dice/api?status.svg)](https://godoc.org/github.com/fear-the-dice/api)
 [![Apiary](https://img.shields.io/badge/apiary-blueprint-blue.svg)](http://docs.fearthedice.apiary.io/)
 [![Coverage Status](https://coveralls.io/repos/fear-the-dice/api/badge.svg)](https://coveralls.io/r/fear-the-dice/api)
+[![Codacy Badge](https://www.codacy.com/project/badge/aedd231f411f4e469337b86da58875ed)](https://www.codacy.com/app/jeffhann/api)
 [![Build Status](https://travis-ci.org/fear-the-dice/api.svg)](https://travis-ci.org/fear-the-dice/api)
 [![Dependency Status](https://david-dm.org/fear-the-dice/api.svg)](https://david-dm.org/fear-the-dice/api)
 [![GitHub license](https://img.shields.io/github/license/fear-the-dice/api.svg)]()
