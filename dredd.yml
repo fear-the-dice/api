@@ -12,12 +12,12 @@ output: []
 header: []
 sorted: false
 user: null
-inline-errors: false
+inline-errors: true
 details: false
 method: []
 color: true
 level: info
-timestamp: false
+timestamp: true
 silent: false
 path: []
 blueprint: apiary.apib
