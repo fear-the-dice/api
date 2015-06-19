@@ -3,7 +3,6 @@ package main
 import (
 	"errors"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"os"
 	"strings"
@@ -70,7 +69,7 @@ func main() {
 		port        = os.Getenv("PORT")
 		mongoServer = os.Getenv("MONGOLAB_URI")
 		mongoDb     = os.Getenv("DB")
-		authKeyPath = os.Getenv("AUTHKEY")
+		authKey     = os.Getenv("FTDAUTHKEY")
 	)
 
 	if len(redisServer) <= 1 {
@@ -89,8 +88,8 @@ func main() {
 		mongoServer = "mongodb://localhost"
 	}
 
-	if len(authKeyPath) <= 1 {
-		authKeyPath = "/usr/local/keys/FTDAuth_pk8.rsa"
+	if len(authKey) <= 1 {
+		authKey = "supersecret"
 	}
 
 	pool := &redis.Pool{
@@ -111,11 +110,6 @@ func main() {
 		Database: mongoDb,
 	}
 
-	authKey, err := ioutil.ReadFile(authKeyPath)
-	if err != nil {
-		panic("Unable to read JWT key: " + authKeyPath)
-	}
-
 	models.SetConfig(&dbOptions)
 
 	router := gin.New()
@@ -125,7 +119,7 @@ func main() {
 		AllowMethods: []string{"GET", "POST", "PUT", "DELETE", "HEAD"},
 	}))
 
-	router.Use(checkAuth(pool, authKey))
+	router.Use(checkAuth(pool, []byte(authKey)))
 
 	controllers.PlayerController.Attach(router)
 	controllers.MonsterController.Attach(router)

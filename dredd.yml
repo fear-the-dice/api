@@ -1,23 +1,23 @@
 dry-run: null
 hookfiles: null
 sandbox: false
-server: 'PORT=3000 MONGOLAB_URI=mongodb://localhost/heroku_app37083199 go run server.go'
-server-wait: 3
+server: go run server.go
+server-wait: 5
 init: false
 custom: {}
 names: false
 only: []
-reporter: []
+reporter: apiary
 output: []
 header: []
-sorted: false
+sorted: true
 user: null
 inline-errors: false
-details: false
-method: []
+details: true
+method: false
 color: true
 level: info
-timestamp: false
+timestamp: true
 silent: false
 path: []
 blueprint: apiary.apib

@@ -19,12 +19,12 @@ var PlayerController *playerController = new(playerController)
 func (this *playerController) Attach(router *gin.Engine) {
 	players := router.Group("/players")
 	{
-		players.POST("", this.newPlayer)
-		players.OPTIONS("", this.options)
 		players.HEAD("/", this.options)
+		players.OPTIONS("", this.options)
+		players.OPTIONS("/:id", this.options)
+		players.POST("", this.newPlayer)
 		players.GET("", this.getPlayers)
 		players.GET("/:id", this.getPlayer)
-		players.OPTIONS("/:id", this.options)
 		players.PUT("/:id", this.updatePlayer)
 		players.DELETE("/:id", this.deletePlayer)
 	}
@@ -59,7 +59,7 @@ func (this *playerController) getPlayer(c *gin.Context) {
 
 func (this *playerController) options(c *gin.Context) {
 	c.Writer.Header().Set("Access-Control-Allow-Headers", "Origin,Accept,Content-Type,Authorization")
-	c.Writer.Header().Set("Access-Control-Allow-Method", "GET,POST,PUT,DELETE")
+	c.Writer.Header().Set("Access-Control-Allow-Method", "GET,POST,PUT,DELETE,HEAD")
 	c.String(http.StatusNoContent, "")
 }
 
@@ -96,7 +96,7 @@ func (this *playerController) updatePlayer(c *gin.Context) {
 
 	if err := models.UpdatePlayer(oid, player); err != nil {
 		fmt.Printf("%s\n", err)
-		c.String(http.StatusNotFound, "")
+		c.String(http.StatusNotFound, err.Error())
 	} else {
 		c.JSON(http.StatusOK, player)
 	}
