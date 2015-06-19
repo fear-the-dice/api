@@ -1,5 +1,6 @@
 [![GitHub tag](https://img.shields.io/github/tag/fear-the-dice/api.svg)](https://github.com/fear-the-dice/api/tags)
 [![GoDoc](https://godoc.org/github.com/fear-the-dice/api?status.svg)](https://godoc.org/github.com/fear-the-dice/api)
+[![Apiary](https://img.shields.io/badge/apiary-blueprint-blue.svg)](http://docs.fearthedice.apiary.io/)
 [![Coverage Status](https://coveralls.io/repos/fear-the-dice/api/badge.svg)](https://coveralls.io/r/fear-the-dice/api)
 [![Build Status](https://travis-ci.org/fear-the-dice/api.svg)](https://travis-ci.org/fear-the-dice/api)
 [![GPL](https://img.shields.io/badge/license-GPLv2-green.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
