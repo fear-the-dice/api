@@ -24,6 +24,11 @@ Retrieve all options avaliable for this specific resource.
 
 Retrieve all monsters in a JSON array.
 
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YWRkNmUxNi05MDgwLTQ4YWQtOWU5Zi0wODU2MWM5ZWQzODciLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.ExMw3I602BXNcyuIo3SEHQWaDQsRAJBX4L5Fj6gcUQs 
+                
 + Response 200
     + Headers
     
@@ -260,7 +265,10 @@ Retrieve all monsters in a JSON array.
 
 Create a new monster by passing the JSON object to the server.
 
-+ Request New Monster
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YWRkNmUxNi05MDgwLTQ4YWQtOWU5Zi0wODU2MWM5ZWQzODciLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.ExMw3I602BXNcyuIo3SEHQWaDQsRAJBX4L5Fj6gcUQs
     + Body
     
          ```
@@ -311,15 +319,25 @@ Monster resource for accessing individual monster objects.
 
 Retrieve all options avaliable for this specific resource.
 
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YWRkNmUxNi05MDgwLTQ4YWQtOWU5Zi0wODU2MWM5ZWQzODciLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.ExMw3I602BXNcyuIo3SEHQWaDQsRAJBX4L5Fj6gcUQs
+
 + Response 204
     + Headers
     
             Access-Control-Allow-Headers: Origin,Accept,Content-Type,Authorization
             Access-Control-Allow-Methods: GET,POST,PUT,DELETE,HEAD
 
-### Get Monster by ID [GET]
+### Get Monster [GET]
 
 Retrieve a specific monster.
+
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YWRkNmUxNi05MDgwLTQ4YWQtOWU5Zi0wODU2MWM5ZWQzODciLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.ExMw3I602BXNcyuIo3SEHQWaDQsRAJBX4L5Fj6gcUQs
 
 + Response 200
     + Headers
@@ -347,7 +365,11 @@ Retrieve a specific monster.
 
 Edit an existing monster by passing a new JSON object. This will replace the existing object so it is wise to ensure all fields are set.
 
-+ Request New Monster
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YWRkNmUxNi05MDgwLTQ4YWQtOWU5Zi0wODU2MWM5ZWQzODciLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.ExMw3I602BXNcyuIo3SEHQWaDQsRAJBX4L5Fj6gcUQs
+            
     + Body
     
          ```
@@ -393,10 +415,15 @@ Edit an existing monster by passing a new JSON object. This will replace the exi
 
 Delete an existing monster.
 
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YWRkNmUxNi05MDgwLTQ4YWQtOWU5Zi0wODU2MWM5ZWQzODciLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.ExMw3I602BXNcyuIo3SEHQWaDQsRAJBX4L5Fj6gcUQs
+
 + Response 200
     + Headers
     
-            Content-Type: application/json; charset=utf-8
+            Content-Type: text/plain; charset=utf-8
 
 ## Players [/players]
 Players resource for accessing all players as a group.
@@ -415,6 +442,11 @@ Retrieve all options avaliable for this specific resource.
 ### Get Players [GET]
 
 Retrieve all players in a JSON array.
+
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YWRkNmUxNi05MDgwLTQ4YWQtOWU5Zi0wODU2MWM5ZWQzODciLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.ExMw3I602BXNcyuIo3SEHQWaDQsRAJBX4L5Fj6gcUQs
 
 + Response 200
     + Headers
@@ -475,7 +507,11 @@ Retrieve all players in a JSON array.
 
 Create a new player by passing the JSON object to the server.
 
-+ Request Create New Player
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YWRkNmUxNi05MDgwLTQ4YWQtOWU5Zi0wODU2MWM5ZWQzODciLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.ExMw3I602BXNcyuIo3SEHQWaDQsRAJBX4L5Fj6gcUQs
+            
     + Body
     
          ```
@@ -490,6 +526,7 @@ Create a new player by passing the JSON object to the server.
             "damage": 0
         }
          ```
+         
 + Response 201
     + Headers
     
@@ -531,6 +568,11 @@ Retrieve all options avaliable for this specific resource.
 
 Retrieve a specific player.
 
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YWRkNmUxNi05MDgwLTQ4YWQtOWU5Zi0wODU2MWM5ZWQzODciLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.ExMw3I602BXNcyuIo3SEHQWaDQsRAJBX4L5Fj6gcUQs
+
 + Response 200
     + Headers
     
@@ -555,7 +597,11 @@ Retrieve a specific player.
 
 Edit an existing player by passing a new JSON object. This will replace the existing object so it is wise to ensure all fields are set.
 
-+ Request Create New Player
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YWRkNmUxNi05MDgwLTQ4YWQtOWU5Zi0wODU2MWM5ZWQzODciLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.ExMw3I602BXNcyuIo3SEHQWaDQsRAJBX4L5Fj6gcUQs
+            
     + Body
     
          ```
@@ -571,12 +617,14 @@ Edit an existing player by passing a new JSON object. This will replace the exis
             "damage": 0
         }
          ```
+         
 + Response 201
     + Headers
     
             Content-Type: application/json; charset=utf-8
             Location: fear-the-dice-api.herokuapp.com/players/555e460260a3dca513e6266f
     + Body
+    
     
          ```
         {
@@ -596,9 +644,12 @@ Edit an existing player by passing a new JSON object. This will replace the exis
 
 Delete an existing player.
 
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5YWRkNmUxNi05MDgwLTQ4YWQtOWU5Zi0wODU2MWM5ZWQzODciLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.ExMw3I602BXNcyuIo3SEHQWaDQsRAJBX4L5Fj6gcUQs
+
 + Response 200
     + Headers
-    
-            Content-Type: appli
-
-
+   
+            Content-Type: text/plain; charset=utf-8
