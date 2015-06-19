@@ -11,5 +11,4 @@ before_install:
   - npm install -g dredd
 before_script:
   - mongorestore
-  - dredd
 script: dredd
