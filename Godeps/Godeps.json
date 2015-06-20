@@ -3,6 +3,19 @@
 	"GoVersion": "go1.4.1",
 	"Deps": [
 		{
+			"ImportPath": "github.com/dgrijalva/jwt-go",
+			"Comment": "v2.2.0-28-g2e53eb6",
+			"Rev": "2e53eb673c4450614e3bca6f345197f9527dce71"
+		},
+		{
+			"ImportPath": "github.com/garyburd/redigo/internal",
+			"Rev": "3e4727f0ef5938d3a846cdb57e560dba4419e854"
+		},
+		{
+			"ImportPath": "github.com/garyburd/redigo/redis",
+			"Rev": "3e4727f0ef5938d3a846cdb57e560dba4419e854"
+		},
+		{
 			"ImportPath": "github.com/gin-gonic/gin",
 			"Comment": "v0.5",
 			"Rev": "50e7e427300a7eeeb299a4cd5bc1ebfa04d48528"
@@ -12,8 +25,12 @@
 			"Rev": "bde5c16eb82ff15a1734a3818d9b9547065f65b1"
 		},
 		{
+			"ImportPath": "github.com/mattn/go-colorable",
+			"Rev": "d67e0b7d1797975196499f79bcc322c08b9f218b"
+		},
+		{
 			"ImportPath": "github.com/obihann/gin-cors",
-			"Rev": "ac4bc0aed95adfab09f55b942282bd9c25f05b76"
+			"Rev": "bfa0a67e3d2f02e784e558b8e87c08e0752f8080"
 		},
 		{
 			"ImportPath": "gopkg.in/mgo.v2",

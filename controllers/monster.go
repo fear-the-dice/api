@@ -9,7 +9,9 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
-type monsterController struct{}
+type (
+	monsterController struct{}
+)
 
 var MonsterController *monsterController = new(monsterController)
 
