@@ -65,7 +65,7 @@ func main() {
 	type ()
 
 	var (
-		redisServer = os.Getenv("REDIS")
+		redisServer = os.Getenv("REDISCLOUD_URL")
 		port        = os.Getenv("PORT")
 		mongoServer = os.Getenv("MONGOLAB_URI")
 		mongoDb     = os.Getenv("DB")
