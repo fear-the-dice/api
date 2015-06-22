@@ -7,8 +7,3 @@ services:
 notifications:
   email:
     - jeffhann@gmail.com
-before_install:
-  - npm install -g dredd
-before_script:
-  - mongorestore
-script: test
