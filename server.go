@@ -76,7 +76,7 @@ func main() {
 		redisServer = ":6379"
 	}
 
-	fmt.Printf("Redis: %s\n", redisServer)
+	fmt.Printf("CONFIG:\nRedis: %s\n", redisServer)
 
 	if len(port) <= 1 {
 		port = ":3000"
@@ -100,7 +100,7 @@ func main() {
 		authKey = "supersecret"
 	}
 
-	fmt.Printf("authKey: %s\n", authKey)
+	fmt.Printf("authKey: %s\n\n", authKey)
 
 	pool := &redis.Pool{
 		MaxIdle: 100,
