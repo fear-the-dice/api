@@ -20,5 +20,5 @@ level: info
 timestamp: true
 silent: false
 path: []
-blueprint: 'blueprint.md'
+blueprint: 'apiary.apib'
 endpoint: 'http://localhost:3000'
