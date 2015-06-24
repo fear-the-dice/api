@@ -76,21 +76,31 @@ func main() {
 		redisServer = ":6379"
 	}
 
+	fmt.Printf("Redis: %s\n", redisServer)
+
 	if len(port) <= 1 {
 		port = ":3000"
 	}
+
+	fmt.Printf("Port: %s\n", port)
 
 	if len(mongoDb) <= 1 {
 		mongoDb = "heroku_app37083199"
 	}
 
+	fmt.Printf("mongoDb: %s\n", mongoDb)
+
 	if len(mongoServer) <= 1 {
 		mongoServer = "mongodb://localhost"
 	}
 
+	fmt.Printf("mongoServer: %s\n", mongoServer)
+
 	if len(authKey) <= 1 {
 		authKey = "supersecret"
 	}
+
+	fmt.Printf("authKey: %s\n", authKey)
 
 	pool := &redis.Pool{
 		MaxIdle: 100,
@@ -98,6 +108,7 @@ func main() {
 			c, err := redis.Dial("tcp", redisServer)
 
 			if err != nil {
+				fmt.Printf("redis error: %s\n", err)
 				return nil, err
 			}
 
