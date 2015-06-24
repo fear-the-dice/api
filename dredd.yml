@@ -2,7 +2,7 @@ dry-run: null
 hookfiles: null
 sandbox: false
 server: go run server.go
-server-wait: 5
+server-wait: 3
 init: false
 custom: {}
 names: false
@@ -20,5 +20,5 @@ level: info
 timestamp: true
 silent: false
 path: []
-blueprint: apiary.apib
+blueprint: 'blueprint.md'
 endpoint: 'http://localhost:3000'
