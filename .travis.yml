@@ -9,7 +9,5 @@ notifications:
     - jeffhann@gmail.com
 before_install:
   - npm install -g dredd@0.6.0
-before_script:
-  - mongorestore
 script:
   - ./test 
