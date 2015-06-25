@@ -352,7 +352,7 @@ Create a new player by passing the JSON object to the server.
 Player resource for accessing individual player objects.
  
 + Parameters 
-    + player_id: `55845a89b6dbd4220c000006` (string), required - ID of the 'player'
+    + player_id: `555e460260a3dca513e6266d` (string), required - ID of the 'player'
 
 ### Get API Options [OPTIONS]
 
