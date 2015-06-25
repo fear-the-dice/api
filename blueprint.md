@@ -132,7 +132,7 @@ Create a new monster by passing the JSON object to the server.
 Monster resource for accessing individual monster objects. 
 
 + Parameters 
-    + monster_id: `555e45fc60a3dca513e62663` (string), required  - ID of the 'monster'
+    + monster_id: `555e45fc60a3dca513e62664` (string), required  - ID of the 'monster'
 
 ### Get API Options [OPTIONS]
 
@@ -352,7 +352,7 @@ Create a new player by passing the JSON object to the server.
 Player resource for accessing individual player objects.
  
 + Parameters 
-    + player_id: `555e460260a3dca513e6266d` (string), required - ID of the 'player'
+    + player_id: `55845a5fb6dbd4220c000004` (string), required - ID of the 'player'
 
 ### Get API Options [OPTIONS]
 
