@@ -28,7 +28,7 @@ Retrieve all monsters in a JSON array.
 + Request
     + Headers
         
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYWVjMDQzMC04NjAxLTQ1NTMtODUzYi1lN2FjNGI3Y2E3NGUiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.BYjR2Xui6nm8mXljztpKCLW7MGNP50hFxyOkihJuUNc
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzZjJmMWI2My04YzM2LTQ2MWEtOWJjZi00OTRmZDY5YmQxMzIiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.IemFBgUUEsuBYgxQkH9ijb18Hv-fUckOSiwr1Zjf3Vs
                 
 + Response 200
     + Headers
@@ -84,7 +84,7 @@ Create a new monster by passing the JSON object to the server.
 + Request
     + Headers
         
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYWVjMDQzMC04NjAxLTQ1NTMtODUzYi1lN2FjNGI3Y2E3NGUiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.BYjR2Xui6nm8mXljztpKCLW7MGNP50hFxyOkihJuUNc
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzZjJmMWI2My04YzM2LTQ2MWEtOWJjZi00OTRmZDY5YmQxMzIiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.IemFBgUUEsuBYgxQkH9ijb18Hv-fUckOSiwr1Zjf3Vs
     + Body
     
             {
@@ -141,7 +141,7 @@ Retrieve all options avaliable for this specific resource.
 + Request
     + Headers
         
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYWVjMDQzMC04NjAxLTQ1NTMtODUzYi1lN2FjNGI3Y2E3NGUiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.BYjR2Xui6nm8mXljztpKCLW7MGNP50hFxyOkihJuUNc
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzZjJmMWI2My04YzM2LTQ2MWEtOWJjZi00OTRmZDY5YmQxMzIiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.IemFBgUUEsuBYgxQkH9ijb18Hv-fUckOSiwr1Zjf3Vs
 
 + Response 204
     + Headers
@@ -156,7 +156,7 @@ Retrieve a specific monster.
 + Request
     + Headers
         
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYWVjMDQzMC04NjAxLTQ1NTMtODUzYi1lN2FjNGI3Y2E3NGUiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.BYjR2Xui6nm8mXljztpKCLW7MGNP50hFxyOkihJuUNc
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzZjJmMWI2My04YzM2LTQ2MWEtOWJjZi00OTRmZDY5YmQxMzIiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.IemFBgUUEsuBYgxQkH9ijb18Hv-fUckOSiwr1Zjf3Vs
 
 + Response 200
     + Headers
@@ -186,7 +186,7 @@ Delete an existing monster.
 + Request
     + Headers
         
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYWVjMDQzMC04NjAxLTQ1NTMtODUzYi1lN2FjNGI3Y2E3NGUiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.BYjR2Xui6nm8mXljztpKCLW7MGNP50hFxyOkihJuUNc
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzZjJmMWI2My04YzM2LTQ2MWEtOWJjZi00OTRmZDY5YmQxMzIiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.IemFBgUUEsuBYgxQkH9ijb18Hv-fUckOSiwr1Zjf3Vs
 
 + Response 200
     + Headers
@@ -215,7 +215,7 @@ Retrieve all players in a JSON array.
 + Request
     + Headers
         
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYWVjMDQzMC04NjAxLTQ1NTMtODUzYi1lN2FjNGI3Y2E3NGUiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.BYjR2Xui6nm8mXljztpKCLW7MGNP50hFxyOkihJuUNc
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzZjJmMWI2My04YzM2LTQ2MWEtOWJjZi00OTRmZDY5YmQxMzIiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.IemFBgUUEsuBYgxQkH9ijb18Hv-fUckOSiwr1Zjf3Vs
 
 + Response 200
     + Headers
@@ -256,7 +256,7 @@ Create a new player by passing the JSON object to the server.
 + Request
     + Headers
         
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYWVjMDQzMC04NjAxLTQ1NTMtODUzYi1lN2FjNGI3Y2E3NGUiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.BYjR2Xui6nm8mXljztpKCLW7MGNP50hFxyOkihJuUNc
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzZjJmMWI2My04YzM2LTQ2MWEtOWJjZi00OTRmZDY5YmQxMzIiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.IemFBgUUEsuBYgxQkH9ijb18Hv-fUckOSiwr1Zjf3Vs
             
     + Body
     
@@ -313,7 +313,7 @@ Retrieve a specific player.
 + Request
     + Headers
         
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYWVjMDQzMC04NjAxLTQ1NTMtODUzYi1lN2FjNGI3Y2E3NGUiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.BYjR2Xui6nm8mXljztpKCLW7MGNP50hFxyOkihJuUNc
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzZjJmMWI2My04YzM2LTQ2MWEtOWJjZi00OTRmZDY5YmQxMzIiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.IemFBgUUEsuBYgxQkH9ijb18Hv-fUckOSiwr1Zjf3Vs
 
 + Response 200
     + Headers
@@ -342,7 +342,7 @@ Delete an existing player.
 + Request
     + Headers
         
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYWVjMDQzMC04NjAxLTQ1NTMtODUzYi1lN2FjNGI3Y2E3NGUiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.BYjR2Xui6nm8mXljztpKCLW7MGNP50hFxyOkihJuUNc
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzZjJmMWI2My04YzM2LTQ2MWEtOWJjZi00OTRmZDY5YmQxMzIiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.IemFBgUUEsuBYgxQkH9ijb18Hv-fUckOSiwr1Zjf3Vs
 
 + Response 200
     + Headers
