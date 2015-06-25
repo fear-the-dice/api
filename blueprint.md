@@ -1,5 +1,5 @@
 FORMAT: 1A   
-HOST: fear-the-dice-api.herokuapp.com/api
+HOST: fear-the-dice-api.herokuapp.com
 
 # Fear the Dice!
 
