@@ -1,5 +1,5 @@
 FORMAT: 1A   
-HOST: fear-the-dice-api.herokuapp.com/api
+HOST: fear-the-dice-api.herokuapp.com
 
 # Fear the Dice!
 
@@ -132,7 +132,7 @@ Create a new monster by passing the JSON object to the server.
 Monster resource for accessing individual monster objects. 
 
 + Parameters 
-    + monster_id: `555e45fc60a3dca513e62663` (string), required  - ID of the 'monster'
+    + monster_id: `555e45fc60a3dca513e62664` (string), required  - ID of the 'monster'
 
 ### Get API Options [OPTIONS]
 
@@ -177,6 +177,64 @@ Retrieve a specific monster.
                 "challange": 2,
                 "xp": 450,
                 "manual": 33
+            }
+
+### Edit Monster [PUT]
+
+Edit an existing monster by passing a new JSON object. This will replace the existing object so it is wise to ensure all fields are set.
+
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYWVjMDQzMC04NjAxLTQ1NTMtODUzYi1lN2FjNGI3Y2E3NGUiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.BYjR2Xui6nm8mXljztpKCLW7MGNP50hFxyOkihJuUNc
+            
+    + Body
+    
+            {
+                "id": "555e45fc60a3dca513e62663",
+                "initiative": 1,
+                "ac": 14,
+                "hp": 19,
+                "health": 19,
+                "damage": 0,
+                "speed": "30/50",
+                "monster": "Draft Horse",
+                "challange": 0,
+                "xp": 50,
+                "manual": 321,
+                "str": "14 (+1)",
+                "dex": "14 (+1)",
+                "con": "10",
+                "int": "9 (-1)",
+                "wis": "(16 (+2)",
+                "cha": "(16 (+2)"
+            }
+
++ Response 201
+    + Headers
+    
+            Content-Type: application/json; charset=utf-8
+
+    + Body
+    
+            {
+                "id": "555e45fc60a3dca513e62661",
+                "initiative": 1,
+                "ac": 14,
+                "hp": 19,
+                "health": 19,
+                "damage": 0,
+                "speed": "30/50",
+                "monster": "Draft Horse",
+                "challange": 0,
+                "xp": 50,
+                "manual": 321,
+                "str": "14 (+1)",
+                "dex": "14 (+1)",
+                "con": "10",
+                "int": "9 (-1)",
+                "wis": "(16 (+2)",
+                "cha": "(16 (+2)"
             }
 
 ### Delete Monster [DELETE]
@@ -294,7 +352,7 @@ Create a new player by passing the JSON object to the server.
 Player resource for accessing individual player objects.
  
 + Parameters 
-    + player_id: `555e460260a3dca513e6266d` (string), required - ID of the 'player'
+    + player_id: `55845a5fb6dbd4220c000004` (string), required - ID of the 'player'
 
 ### Get API Options [OPTIONS]
 
@@ -333,6 +391,50 @@ Retrieve a specific player.
                 "health": 19,
                 "speed": 25,
                 "damage": 0
+            }
+         
+### Edit Player [PUT]
+
+Edit an existing player by passing a new JSON object. This will replace the existing object so it is wise to ensure all fields are set.
+
++ Request
+    + Headers
+        
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYWVjMDQzMC04NjAxLTQ1NTMtODUzYi1lN2FjNGI3Y2E3NGUiLCJpYXQiOjg2NDAwLCJzdWIiOiI4MjA1ZDNiMi0zZTczLTQzMmItYjdlYi1iNzNmNzM4MThkODMiLCJhdWQiOiIqLmZlYXJ0aGVkaWNlLmNvbSIsImlzcyI6ImF1dGguZmVhcnRoZWRpY2UuY29tIn0.BYjR2Xui6nm8mXljztpKCLW7MGNP50hFxyOkihJuUNc
+            
+    + Body
+
+            {
+                "id": "555e460260a3dca513e6266d",
+                "initiative": 16,
+                "ac": 16,
+                "hp": 20,
+                "health": 4,
+                "damage": 16,
+                "speed": "",
+                "name": "Jamie",
+                "character": "Thomas",
+                "thumb": ""
+            }
+
++ Response 201
+    + Headers
+    
+            Content-Type: application/json; charset=utf-8
+
+    + Body   
+
+            {
+                "id": "555e460260a3dca513e6266d",
+                "initiative": 16,
+                "ac": 16,
+                "hp": 20,
+                "health": 4,
+                "damage": 16,
+                "speed": "",
+                "name": "Jamie",
+                "character": "Thomas",
+                "thumb": ""
             }
 
 ### Delete Player [DELETE]
