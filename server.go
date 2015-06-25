@@ -33,6 +33,7 @@ func checkAuth(pool *redis.Pool, verifyKey []byte) gin.HandlerFunc {
 		})
 
 		if err != nil {
+			fmt.Printf("%s\n", err)
 			c.Fail(http.StatusUnauthorized, errors.New("Error parsing token"))
 			return
 		}
@@ -46,8 +47,6 @@ func checkAuth(pool *redis.Pool, verifyKey []byte) gin.HandlerFunc {
 
 		jti := token.Claims["jti"].(string)
 		key := fmt.Sprintf("ftd/%s/%s", sub, jti)
-
-		fmt.Printf("%s\n", key)
 
 		conn.Send("EXISTS", key)
 		conn.Flush()
@@ -69,32 +68,11 @@ func main() {
 	type ()
 
 	var (
-		redisServer = os.Getenv("REDISCLOUD_URL")
 		port        = os.Getenv("PORT")
 		mongoServer = os.Getenv("MONGOLAB_URI")
 		mongoDb     = os.Getenv("DB")
 		authKey     = os.Getenv("FTDAUTHKEY")
 	)
-
-	if len(redisServer) <= 1 {
-		redisServer = ":6379"
-	}
-
-	if len(port) <= 1 {
-		port = "3000"
-	}
-
-	if len(mongoDb) <= 1 {
-		mongoDb = "heroku_app37083199"
-	}
-
-	if len(mongoServer) <= 1 {
-		mongoServer = "mongodb://localhost"
-	}
-
-	if len(authKey) <= 1 {
-		authKey = "supersecret"
-	}
 
 	pool := &redis.Pool{
 		MaxIdle: 100,
