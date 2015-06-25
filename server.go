@@ -13,6 +13,7 @@ import (
 	"github.com/garyburd/redigo/redis"
 	"github.com/gin-gonic/gin"
 	"github.com/obihann/gin-cors"
+	"github.com/soveran/redisurl"
 )
 
 func checkAuth(pool *redis.Pool, verifyKey []byte) gin.HandlerFunc {
@@ -46,11 +47,14 @@ func checkAuth(pool *redis.Pool, verifyKey []byte) gin.HandlerFunc {
 		jti := token.Claims["jti"].(string)
 		key := fmt.Sprintf("ftd/%s/%s", sub, jti)
 
+		fmt.Printf("%s\n", key)
+
 		conn.Send("EXISTS", key)
 		conn.Flush()
 		_, err = conn.Receive()
 
 		if err != nil {
+			fmt.Printf("%s\n", err)
 			c.AbortWithStatus(http.StatusUnauthorized)
 			c.Fail(http.StatusUnauthorized, errors.New("JTI expired or invalid"))
 			return
@@ -77,7 +81,7 @@ func main() {
 	}
 
 	if len(port) <= 1 {
-		port = ":3000"
+		port = "3000"
 	}
 
 	if len(mongoDb) <= 1 {
@@ -95,7 +99,7 @@ func main() {
 	pool := &redis.Pool{
 		MaxIdle: 100,
 		Dial: func() (redis.Conn, error) {
-			c, err := redis.Dial("tcp", redisServer)
+			c, err := redisurl.Connect()
 
 			if err != nil {
 				return nil, err
@@ -124,5 +128,5 @@ func main() {
 	controllers.PlayerController.Attach(router)
 	controllers.MonsterController.Attach(router)
 
-	router.Run(port)
+	router.Run(fmt.Sprintf(":%s", port))
 }
