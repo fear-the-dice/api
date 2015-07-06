@@ -73,7 +73,12 @@ func main() {
 		mongoServer = os.Getenv("MONGOLAB_URI")
 		mongoDb     = os.Getenv("DB")
 		authKey     = os.Getenv("FTDAUTHKEY")
+		agent       = gorelic.NewAgent()
 	)
+
+	agent.Verbose = true
+	agent.NewrelicLicense = os.Getenv("NEW_RELIC_LICENSE_KEY")
+	agent.Run()
 
 	pool := &redis.Pool{
 		MaxIdle: 100,
