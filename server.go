@@ -14,6 +14,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/obihann/gin-cors"
 	"github.com/soveran/redisurl"
+	"github.com/yvasiyarov/gorelic"
 )
 
 func checkAuth(pool *redis.Pool, verifyKey []byte) gin.HandlerFunc {
