@@ -5,8 +5,8 @@
 	"Deps": [
 		{
 			"ImportPath": "github.com/dgrijalva/jwt-go",
-			"Comment": "v2.2.0-28-g2e53eb6",
-			"Rev": "2e53eb673c4450614e3bca6f345197f9527dce71"
+			"Comment": "v3.0.0-6-g63734ea",
+			"Rev": "63734eae1ef55eaac06fdc0f312615f2e321e273"
 		},
 		{
 			"ImportPath": "github.com/garyburd/redigo/internal",
