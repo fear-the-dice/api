@@ -32,18 +32,20 @@ func checkAuth(pool *redis.Pool, verifyKey []byte) gin.HandlerFunc {
 		})
 
 		if err != nil {
-			c.Fail(http.StatusUnauthorized, errors.New("Error parsing token"))
+			c.AbortWithError(http.StatusUnauthorized, errors.New("Error parsing token"))
 			return
 		}
 
-		sub := token.Claims["sub"].(string)
+		claims := token.Claims.(jwt.MapClaims)
+
+		sub := claims["sub"].(string)
 
 		if sub != "8205d3b2-3e73-432b-b7eb-b73f73818d83" {
-			c.Fail(http.StatusUnauthorized, errors.New("Invalid subscriber"))
+			c.AbortWithError(http.StatusUnauthorized, errors.New("Invalid subscriber"))
 			return
 		}
 
-		jti := token.Claims["jti"].(string)
+		jti := claims["jti"].(string)
 		key := fmt.Sprintf("ftd/%s/%s", sub, jti)
 
 		conn.Send("EXISTS", key)
@@ -52,7 +54,7 @@ func checkAuth(pool *redis.Pool, verifyKey []byte) gin.HandlerFunc {
 
 		if err != nil {
 			c.AbortWithStatus(http.StatusUnauthorized)
-			c.Fail(http.StatusUnauthorized, errors.New("JTI expired or invalid"))
+			c.AbortWithError(http.StatusUnauthorized, errors.New("JTI expired or invalid"))
 			return
 		}
 
